@@ -8,7 +8,6 @@ type NextfeaturedSwiper = {
 };
 
 const NextfeaturedSwiper: React.FC<NextfeaturedSwiper> = ({ restOfFeaturedMovies }) => {
-  console.log(restOfFeaturedMovies);
   return <div>NextfeaturedSwiper</div>;
 };
 

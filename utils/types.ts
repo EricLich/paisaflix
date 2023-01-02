@@ -1,10 +1,9 @@
-
 export type Movie = {
   adult: boolean;
   backdrop_path: string | null;
   belongs_to_collection: Collection;
   budget: number;
-  genres: Array<Genre>;
+  genre_ids: Array<number>;
   homepage: string;
   id: number;
   imdb_id: string;

@@ -25,8 +25,8 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-[85%] mx-auto h-[80px] bg-transparent flex justify-center items-center relative top-0 z-50">
-      <nav className="w-full flex justify-between items-center">
+    <header className="w-full mx-auto h-[80px] flex justify-center items-center top-0 z-50 sticky ">
+      <nav className="w-[85%] mx-auto flex justify-between items-center">
         <Link href={"/"} className="mr-[75px] text-4xl font-bold text-white">
           Paisaflix
         </Link>
