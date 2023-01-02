@@ -7,7 +7,7 @@ export default async function Home() {
   const { results: trendingWeekMovies }: { results: Movie[] } = await movieFetch.json();
 
   return (
-    <main className="">
+    <main className="-mt-[80px]">
       <Hero trendingWeekMovies={trendingWeekMovies} />
     </main>
   );

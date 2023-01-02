@@ -12,7 +12,7 @@ type HeroProps = {
 
 const Hero: React.FC<HeroProps> = ({ trendingWeekMovies }) => {
   return (
-    <section>
+    <section className="w-[85%] mx-auto flex flex-col">
       <HeroFeatured featuredMovie={trendingWeekMovies[0]} />
       <NextfeaturedSwiper restOfFeaturedMovies={trendingWeekMovies.slice(1, trendingWeekMovies.length)} />
     </section>
