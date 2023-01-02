@@ -133,6 +133,6 @@ export type SpokenLanguage = {
 }
 
 export type ApiResponseType<T> = {
-  success: boolean;
+  success?: boolean;
   results: Array<T>;
 }
