@@ -44,9 +44,9 @@ const NextfeaturedSwiper: React.FC<NextfeaturedSwiper> = ({ restOfFeaturedMovies
                 />
               </Link>
               <div className="w-full h-[90%] absolute bottom-0 bg-gradient-to-b from-transparent to-black"></div>
-              <p className="text-white absolute bottom-2 right-4 z-10 font-semibold text-xl">
+              {/*  <p className="text-white absolute bottom-2 right-4 z-10 font-semibold text-xl">
                 {index + 1 < 10 && 0} {index + 1}
-              </p>
+              </p> */}
             </div>
           </motion.div>
         ))}

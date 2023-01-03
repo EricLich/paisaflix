@@ -1,6 +1,6 @@
 //MOVIE ENDPOINTS
-
 export const API_TRENDING_MOVIES_WEEK: string = `${process.env.NEXT_PUBLIC_BASE_MOVIE_API}/trending/movie/week?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`;
+export const API_TRENDING_MOVIES_WEEK_PAGE: string = `${API_TRENDING_MOVIES_WEEK}&page=`;
 export const API_TRENDING_MOVIES_DAY: string = `${process.env.NEXT_PUBLIC_BASE_MOVIE_API}/trending/movie/day?api_key=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`;
 
 //SHOW ENDPOINTS

@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const [showBg, setShowBg] = useState<boolean>(false);
   const menuItems: Array<{ routeName: string; route: string }> = [
     {
       routeName: "Home",
@@ -24,9 +25,27 @@ const Navbar = () => {
     },
   ];
 
+  const handleScroll = useCallback(() => {
+    if (window.scrollY > 0) {
+      setShowBg(true);
+    } else {
+      setShowBg(false);
+    }
+  }, [menuItems]);
+
+  useEffect(() => {
+    document.addEventListener("scroll", handleScroll);
+
+    return () => document.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="w-full mx-auto h-[80px] flex justify-center items-center top-0 z-50 sticky ">
-      <nav className="w-[85%] mx-auto flex justify-between items-center">
+    <header
+      className={`w-full mx-auto h-[80px] flex justify-center items-center top-0 z-50 sticky duration-200 ${
+        showBg ? "bg-black opacity-90" : "bg-transparent"
+      }`}
+    >
+      <nav className="w-[85%] mx-auto flex justify-between items-center opacity-100">
         <Link href={"/"} className="mr-[75px] text-4xl font-bold text-white">
           Paisaflix
         </Link>
