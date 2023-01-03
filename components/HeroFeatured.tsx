@@ -16,7 +16,7 @@ const HeroFeatured: React.FC<HeroFeaturedProps> = ({ featuredMovie }) => {
       <HeroInfo movie={featuredMovie} />
       <div className="w-[55%] h-full absolute right-0">
         <div className="w-[30%] h-full left-0 absolute z-10 bg-gradient-to-l from-transparent to-black opacity-100"></div>
-        <div className="w-full h-[200px] right-0 absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-black opacity-100"></div>
+        <div className="w-full h-[800px] right-0 absolute bottom-0 z-10 bg-gradient-to-b from-transparent to-black opacity-100"></div>
         <div className="w-full h-[200px] top-0 absolute bottom-0 z-10 bg-gradient-to-t from-transparent to-black opacity-100"></div>
         <Image
           priority
