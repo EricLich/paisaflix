@@ -47,7 +47,7 @@ const Navbar = () => {
     >
       <nav className="w-[85%] mx-auto flex justify-between items-center opacity-100">
         <Link href={"/"} className="mr-[75px] text-4xl font-bold text-white">
-          Paisaflix
+          Theflix
         </Link>
         <ul className="flex items-center gap-12 mr-auto">
           {menuItems.map((menuItem) => (
