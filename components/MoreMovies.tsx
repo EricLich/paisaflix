@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-import { API_POSTER_IMAGE_PATH, API_TRENDING_MOVIES_WEEK_PAGE } from "../api/apiConstants";
+import { API_TRENDING_MOVIES_WEEK_PAGE } from "../api/apiConstants";
 import type { Movie } from "../utils/types";
-import MovieCard from "./MovieCard";
+import ContentCard from "./MovieCard";
 
 const MoreMovies = () => {
   const [moreMovies, setMoreMovies] = useState<Movie[]>([]);
@@ -24,15 +23,15 @@ const MoreMovies = () => {
   }, [pageToLoad]);
 
   return (
-    <section className="w-full mt-[150px] flex flex-col">
+    <section className="w-[85%] mx-auto mt-[150px] flex flex-col z-20">
       <div className="w-full flex justify-between items-center mb-8">
         <h2 className="text-white  font-semibold text-3xl ">More movies</h2>
-        <Link href={"/"} className="text-[#FED530] font-semibold">
+        <Link href={"/"} className="text-[#FED530] text-xl font-semibold">
           View more
         </Link>
       </div>
       <div className="w-full h-auto grid grid-cols-autofit gap-4">
-        {moreMovies.length > 0 && moreMovies.map((movie) => <MovieCard movie={movie} key={movie.id} />)}
+        {moreMovies.length > 0 && moreMovies.map((movie) => <ContentCard movie={movie} key={movie.id} />)}
       </div>
       <button
         className="self-center mt-6 text-yellow-500 w-20 h-20 bg-yellow-500 rounded-full flex justify-center items-center"

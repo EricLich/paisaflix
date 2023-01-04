@@ -6,11 +6,11 @@ import React from "react";
 import { API_POSTER_IMAGE_PATH } from "../api/apiConstants";
 import { Movie } from "../utils/types";
 
-type MovieCardProps = {
+type ContentCardProps = {
   movie: Movie;
 };
 
-const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
+const ContentCard: React.FC<ContentCardProps> = ({ movie }) => {
   return (
     <Link href={"/"} className="overflow-hidden rounded-sm " key={movie.id}>
       <article className="relative">
@@ -30,4 +30,4 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   );
 };
 
-export default MovieCard;
+export default ContentCard;

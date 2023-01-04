@@ -2,16 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
-import { API_POSTER_IMAGE_PATH } from "../api/apiConstants";
-import type { Movie } from "../utils/types";
 import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 
-type NextfeaturedSwiper = {
-  restOfFeaturedMovies: Movie[];
+import { API_POSTER_IMAGE_PATH } from "../api/apiConstants";
+import type { Movie, TV } from "../utils/types";
+
+type FeaturedSwiperProps = {
+  featuredItems: Movie[] | TV[];
+  title: string;
+  mtNegative: boolean;
 };
 
-const NextfeaturedSwiper: React.FC<NextfeaturedSwiper> = ({ restOfFeaturedMovies }) => {
+const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, mtNegative }) => {
   const [width, setWidth] = useState(0);
   const carousel = useRef<HTMLElement>();
 
@@ -20,8 +23,10 @@ const NextfeaturedSwiper: React.FC<NextfeaturedSwiper> = ({ restOfFeaturedMovies
   }, []);
 
   return (
-    <div className={`w-[${carousel.current?.scrollWidth}px] -mt-[300px] relative z-20 overflow-hidden`}>
-      <h2 className="text-white font-semibold text-3xl mb-8">Featured this week</h2>
+    <div
+      className={`w-[${carousel.current?.scrollWidth}px] ${mtNegative && "-mt-[300px]"} relative z-20 overflow-hidden`}
+    >
+      <h2 className="text-white font-semibold text-3xl mb-8">{title}</h2>
       <motion.div
         /* @ts-ignore */
         ref={carousel}
@@ -30,13 +35,13 @@ const NextfeaturedSwiper: React.FC<NextfeaturedSwiper> = ({ restOfFeaturedMovies
         dragConstraints={{ right: 0, left: -width }}
         whileTap={{ cursor: "grabbing" }}
       >
-        {restOfFeaturedMovies.map((movie, index: number) => (
-          <motion.div key={movie.id} className=" min-w-[200px] relative rounded-md z-30 overflow-hidden">
+        {featuredItems.map((item, index: number) => (
+          <motion.div key={item.id} className=" min-w-[200px] relative rounded-md z-30 overflow-hidden">
             <div>
               <Link href={"/"} className="">
                 <Image
-                  src={`${API_POSTER_IMAGE_PATH}${movie.poster_path}`}
-                  alt={`${movie.title} poster image`}
+                  src={`${API_POSTER_IMAGE_PATH}${item.poster_path}`}
+                  alt={`${(item as Movie).title ? (item as Movie).title : (item as TV).name} poster image`}
                   width={200}
                   height={200}
                   quality={80}
@@ -55,4 +60,4 @@ const NextfeaturedSwiper: React.FC<NextfeaturedSwiper> = ({ restOfFeaturedMovies
   );
 };
 
-export default NextfeaturedSwiper;
+export default FeaturedSwiper;
