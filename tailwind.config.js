@@ -1,5 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -11,9 +9,6 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         'autofit': 'repeat(auto-fit, minmax(300px, 3fr))'
-      },
-      fontFamily: {
-        dmSans: ['DM Sans', ...defaultTheme.fontFamily.sans]
       },
     },
   },

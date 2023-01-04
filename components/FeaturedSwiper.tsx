@@ -37,21 +37,28 @@ const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, m
       >
         {featuredItems.map((item, index: number) => (
           <motion.div key={item.id} className=" min-w-[200px] relative rounded-md z-30 overflow-hidden">
-            <div>
-              <Link href={"/"} className="">
-                <Image
-                  src={`${API_POSTER_IMAGE_PATH}${item.poster_path}`}
-                  alt={`${(item as Movie).title ? (item as Movie).title : (item as TV).name} poster image`}
-                  width={200}
-                  height={200}
-                  quality={80}
-                  className="object-cover"
-                />
+            <Image
+              src={`${API_POSTER_IMAGE_PATH}${item.poster_path}`}
+              alt={`${(item as Movie).title ? (item as Movie).title : (item as TV).name} poster image`}
+              width={200}
+              height={200}
+              quality={80}
+              className="object-cover"
+              draggable={false}
+            />
+
+            <div
+              className="w-full h-[90%] absolute bottom-0 bg-gradient-to-b from-transparent to-black text-white px-3"
+              draggable={false}
+            >
+              <Link
+                href={"/contact"}
+                className="w-[90%] absolute bottom-3 text-lg text-white hover:text-yellow-300 truncate text-ellipsis"
+                draggable={false}
+                title={(item as Movie).title ? (item as Movie).title : (item as TV).name}
+              >
+                {(item as Movie).title ? (item as Movie).title : (item as TV).name}
               </Link>
-              <div className="w-full h-[90%] absolute bottom-0 bg-gradient-to-b from-transparent to-black"></div>
-              {/*  <p className="text-white absolute bottom-2 right-4 z-10 font-semibold text-xl">
-                {index + 1 < 10 && 0} {index + 1}
-              </p> */}
             </div>
           </motion.div>
         ))}
