@@ -11,6 +11,14 @@ const nextConfig = {
         pathname: '/**',
       }
     ]
+  },
+  modularizeImports: {
+    /* "@fortawesome/free-solid-svg-icons": {
+      transform: "@fortawesome/free-solid-svg-icons/{{member}}"
+    }, */
+    "@next/font": {
+      transform: "@next/font/{{member}}"
+    }
   }
 }
 
