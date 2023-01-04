@@ -12,7 +12,7 @@ type FeaturedShowsProps = {
 const FeaturedShows: React.FC<FeaturedShowsProps> = ({ featuredShows }) => {
   return (
     <section className="w-[85%] mx-auto mt-[50px]">
-      <FeaturedSwiper featuredItems={featuredShows} title={"Featured Shows this week"} mtNegative={false} />
+      <FeaturedSwiper featuredItems={featuredShows} title={"Featured Shows this week"} mtNegative={false} type="tv" />
     </section>
   );
 };

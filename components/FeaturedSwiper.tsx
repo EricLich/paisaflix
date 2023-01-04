@@ -12,9 +12,10 @@ type FeaturedSwiperProps = {
   featuredItems: Movie[] | TV[];
   title: string;
   mtNegative: boolean;
+  type: "movie" | "tv";
 };
 
-const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, mtNegative }) => {
+const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, mtNegative, type }) => {
   const [width, setWidth] = useState(0);
   const carousel = useRef<HTMLElement>();
 
@@ -52,7 +53,7 @@ const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, m
               draggable={false}
             >
               <Link
-                href={"/contact"}
+                href={`/${type}/${item.id}`}
                 className="w-[90%] absolute bottom-3 text-lg text-white hover:text-yellow-300 truncate text-ellipsis"
                 draggable={false}
                 title={(item as Movie).title ? (item as Movie).title : (item as TV).name}

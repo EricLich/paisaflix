@@ -9,9 +9,10 @@ import ContentCard from "./MovieCard";
 type MoreContentProps = {
   apiUrl: string;
   title: string;
+  type: "movie" | "tv";
 };
 
-const MoreContent: React.FC<MoreContentProps> = ({ apiUrl, title }) => {
+const MoreContent: React.FC<MoreContentProps> = ({ apiUrl, title, type }) => {
   const [moreContent, setMoreContent] = useState<Array<Movie | TV>>([]);
   const [pageToLoad, setPageToLoad] = useState<number>(2);
 
@@ -35,7 +36,8 @@ const MoreContent: React.FC<MoreContentProps> = ({ apiUrl, title }) => {
         </Link>
       </div>
       <div className="w-full h-auto grid grid-cols-autofit gap-4">
-        {moreContent.length > 0 && moreContent.map((content) => <ContentCard content={content} key={content.id} />)}
+        {moreContent.length > 0 &&
+          moreContent.map((content) => <ContentCard content={content} key={content.id} type={type} />)}
       </div>
       <button
         className="self-center mt-6 text-yellow-500 w-20 h-20 bg-yellow-500 rounded-full flex justify-center items-center"

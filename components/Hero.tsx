@@ -18,6 +18,7 @@ const Hero: React.FC<HeroProps> = ({ trendingWeekMovies }) => {
         featuredItems={trendingWeekMovies.slice(1, trendingWeekMovies.length)}
         title={"Featured this week"}
         mtNegative={true}
+        type="movie"
       />
     </section>
   );

@@ -8,11 +8,12 @@ import type { Movie, TV } from "../utils/types";
 
 type ContentCardProps = {
   content: Movie | TV;
+  type: "movie" | "tv";
 };
 
-const ContentCard: React.FC<ContentCardProps> = ({ content }) => {
+const ContentCard: React.FC<ContentCardProps> = ({ content, type }) => {
   return (
-    <Link href={"/"} className="overflow-hidden rounded-sm " key={content.id}>
+    <Link href={`/${type}/${content.id}`} className="overflow-hidden rounded-sm " key={content.id}>
       <article className="relative overflow-hidden">
         <Image
           src={`${API_POSTER_IMAGE_PATH}${content.poster_path}`}
