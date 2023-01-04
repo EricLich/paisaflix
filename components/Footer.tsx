@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { faLocationDot, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LocationOn, Email, LocalPhone } from "@mui/icons-material";
 
 const Footer = () => {
   const footerTitles: [string, string, string] = ["Product", "Media", "Sitemap"];
@@ -26,15 +25,15 @@ const Footer = () => {
 
   const contactLinks: Array<{ icon: JSX.Element; data: string }> = [
     {
-      icon: <FontAwesomeIcon icon={faLocationDot} />,
+      icon: <LocationOn />,
       data: "Address",
     },
     {
-      icon: <FontAwesomeIcon icon={faEnvelope} />,
+      icon: <Email />,
       data: "mail@mail.com",
     },
     {
-      icon: <FontAwesomeIcon icon={faPhone} />,
+      icon: <LocalPhone />,
       data: "+999999999",
     },
   ];

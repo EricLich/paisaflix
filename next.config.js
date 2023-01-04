@@ -13,9 +13,9 @@ const nextConfig = {
     ]
   },
   modularizeImports: {
-    /* "@fortawesome/free-solid-svg-icons": {
-      transform: "@fortawesome/free-solid-svg-icons/{{member}}"
-    }, */
+    "@mui/icons-material": {
+      transform: "@mui/icons-material/{{member}}"
+    },
     "@next/font": {
       transform: "@next/font/{{member}}"
     }
