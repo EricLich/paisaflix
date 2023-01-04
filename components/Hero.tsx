@@ -4,8 +4,6 @@ import React from "react";
 
 import HeroFeatured from "./HeroFeatured";
 import type { Movie } from "../utils/types";
-import NextfeaturedSwiper from "./FeaturedSwiper";
-import MoreMovies from "./MoreMovies";
 import FeaturedSwiper from "./FeaturedSwiper";
 
 type HeroProps = {

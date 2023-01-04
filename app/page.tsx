@@ -1,7 +1,12 @@
-import { API_TRENDING_MOVIES_WEEK, API_TRENDING_TV_SHOWS_WEEK } from "../api/apiConstants";
+import {
+  API_TRENDING_MOVIES_WEEK,
+  API_TRENDING_TV_SHOWS_WEEK,
+  API_TRENDING_MOVIES_WEEK_PAGE,
+  API_TRENDING_TV_WEEK_PAGE,
+} from "../api/apiConstants";
 import Hero from "../components/Hero";
 import type { Movie, TV } from "../utils/types";
-import MoreMovies from "../components/MoreMovies";
+import MoreContent from "../components/MoreContent";
 import FeaturedShows from "../components/FeaturedShows";
 
 export default async function Home() {
@@ -13,8 +18,9 @@ export default async function Home() {
   return (
     <main className="-mt-[80px]">
       <Hero trendingWeekMovies={trendingWeekMovies} />
-      <MoreMovies />
+      <MoreContent apiUrl={API_TRENDING_MOVIES_WEEK_PAGE} title={"More movies"} />
       <FeaturedShows featuredShows={trendingWeekShows} />
+      <MoreContent apiUrl={API_TRENDING_TV_WEEK_PAGE} title={"More shows"} />
     </main>
   );
 }

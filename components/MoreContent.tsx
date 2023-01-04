@@ -3,21 +3,25 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-import { API_TRENDING_MOVIES_WEEK_PAGE } from "../api/apiConstants";
-import type { Movie } from "../utils/types";
+import type { Movie, TV } from "../utils/types";
 import ContentCard from "./MovieCard";
 
-const MoreMovies = () => {
-  const [moreMovies, setMoreMovies] = useState<Movie[]>([]);
+type MoreContentProps = {
+  apiUrl: string;
+  title: string;
+};
+
+const MoreContent: React.FC<MoreContentProps> = ({ apiUrl, title }) => {
+  const [moreContent, setMoreContent] = useState<Array<Movie | TV>>([]);
   const [pageToLoad, setPageToLoad] = useState<number>(2);
 
   useEffect(() => {
-    fetch(`${API_TRENDING_MOVIES_WEEK_PAGE}${pageToLoad}`).then(async (res) => {
-      const { results: movies }: { results: Movie[] } = await res.json();
-      if (moreMovies.length === 0) {
-        setMoreMovies(movies);
+    fetch(`${apiUrl}${pageToLoad}`).then(async (res) => {
+      const { results: content }: { results: Array<Movie | TV> } = await res.json();
+      if (moreContent.length === 0) {
+        setMoreContent(content);
       } else {
-        setMoreMovies((prevMovies) => (prevMovies = [...prevMovies, ...movies]));
+        setMoreContent((prevMovies) => (prevMovies = [...prevMovies, ...content]));
       }
     });
   }, [pageToLoad]);
@@ -25,13 +29,13 @@ const MoreMovies = () => {
   return (
     <section className="w-[85%] mx-auto mt-[150px] flex flex-col z-20">
       <div className="w-full flex justify-between items-center mb-8">
-        <h2 className="text-white  font-semibold text-3xl ">More movies</h2>
+        <h2 className="text-white  font-semibold text-3xl ">{title}</h2>
         <Link href={"/"} className="text-[#FED530] text-xl font-semibold">
           View more
         </Link>
       </div>
       <div className="w-full h-auto grid grid-cols-autofit gap-4">
-        {moreMovies.length > 0 && moreMovies.map((movie) => <ContentCard movie={movie} key={movie.id} />)}
+        {moreContent.length > 0 && moreContent.map((content) => <ContentCard content={content} key={content.id} />)}
       </div>
       <button
         className="self-center mt-6 text-yellow-500 w-20 h-20 bg-yellow-500 rounded-full flex justify-center items-center"
@@ -45,4 +49,4 @@ const MoreMovies = () => {
   );
 };
 
-export default MoreMovies;
+export default MoreContent;
