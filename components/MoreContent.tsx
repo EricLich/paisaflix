@@ -27,7 +27,7 @@ const MoreContent: React.FC<MoreContentProps> = ({ apiUrl, title }) => {
   }, [pageToLoad]);
 
   return (
-    <section className="w-[85%] mx-auto mt-[150px] flex flex-col z-20">
+    <section className="w-[85%] mx-auto mt-[150px] flex flex-col z-20 mb-[80px]">
       <div className="w-full flex justify-between items-center mb-8">
         <h2 className="text-white  font-semibold text-3xl ">{title}</h2>
         <Link href={"/"} className="text-[#FED530] text-xl font-semibold">

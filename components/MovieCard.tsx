@@ -13,7 +13,7 @@ type ContentCardProps = {
 const ContentCard: React.FC<ContentCardProps> = ({ content }) => {
   return (
     <Link href={"/"} className="overflow-hidden rounded-sm " key={content.id}>
-      <article className="relative">
+      <article className="relative overflow-hidden">
         <Image
           src={`${API_POSTER_IMAGE_PATH}${content.poster_path}`}
           alt={`${(content as Movie).title ? (content as Movie).title : (content as TV).name} poster image`}

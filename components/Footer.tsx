@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full mt-[80px]">
+    <footer className="w-full mt-auto mb-14">
       <div className="w-[85%] mx-auto flex items-start">
         <div className="flex flex-col gap-8">
           <h2 className="text-white text-6xl font-semibold">TheFlix</h2>
