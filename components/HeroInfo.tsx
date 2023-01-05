@@ -23,7 +23,9 @@ const HeroInfo: React.FC<HeroInfoProps> = ({ content, type, addMb }) => {
         {(content as Movie).title ? (content as Movie).title : (content as TV).name}
       </h2>
       <StarRating voteAverage={content.vote_average} />
-      <p className="w-[100%] max-w-[400px] text-white text-base leading-8 mb-8">{content.overview}</p>
+      <p className="w-[100%] max-w-[400px] text-white text-base leading-8 mb-8 line-clamp-6" title={content.overview}>
+        {content.overview}
+      </p>
       <div className="flex flex-col items-start gap-3">
         <div className="flex gap-2">
           <p className="text-white font-semibold">Genres:</p>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 import type { Movie, TV } from "../utils/types";
@@ -39,14 +40,15 @@ const MoreContent: React.FC<MoreContentProps> = ({ apiUrl, title, type }) => {
         {moreContent.length > 0 &&
           moreContent.map((content) => <ContentCard content={content} key={content.id} type={type} />)}
       </div>
-      <button
+      <motion.button
+        whileTap={{ scale: 0.9 }}
         className="self-center mt-6 text-yellow-500 w-20 h-20 bg-yellow-500 rounded-full flex justify-center items-center"
         onClick={() => setPageToLoad((prev) => prev + 1)}
       >
         <div className="w-[90%] h-[90%] bg-black rounded-full flex justify-center items-center text-center text-5xl">
           <span className="self-center -mt-2">+</span>
         </div>
-      </button>
+      </motion.button>
     </section>
   );
 };
