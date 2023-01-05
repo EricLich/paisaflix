@@ -20,6 +20,7 @@ export default async function Home() {
         featuredHero={trendingWeekMovies[0]}
         trendingWeekContent={trendingWeekMovies.slice(1, trendingWeekMovies.length)}
         type="movies"
+        swiperTitle={"Featured movies this week"}
       />
       <MoreContent apiUrl={API_TRENDING_MOVIES_WEEK_PAGE} title={"More movies"} type="movies" />
       <FeaturedShows featuredShows={trendingWeekShows} />

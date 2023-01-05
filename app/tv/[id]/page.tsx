@@ -32,6 +32,7 @@ export default async function TVPage({ params: { id } }: TVPageProps) {
         trendingWeekContent={similarTV.slice(1, similarTV.length)}
         type="movies"
         addMb={true}
+        swiperTitle="Similar TV shows"
       />
     </main>
   );

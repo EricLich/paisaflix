@@ -11,18 +11,14 @@ type HeroProps = {
   trendingWeekContent: Movie[] | TV[];
   type: "movies" | "tv";
   addMb?: boolean;
+  swiperTitle: string;
 };
 
-const Hero: React.FC<HeroProps> = ({ trendingWeekContent, featuredHero, type, addMb }) => {
+const Hero: React.FC<HeroProps> = ({ trendingWeekContent, featuredHero, type, addMb, swiperTitle }) => {
   return (
     <section className="w-[85%] mx-auto flex flex-col">
       <HeroFeatured featuredContent={featuredHero} type={type} addMb={addMb} />
-      <FeaturedSwiper
-        featuredItems={trendingWeekContent}
-        title={"Featured this week"}
-        mtNegative={true}
-        type="movies"
-      />
+      <FeaturedSwiper featuredItems={trendingWeekContent} title={swiperTitle} mtNegative={true} type="movies" />
     </section>
   );
 };

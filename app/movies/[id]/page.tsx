@@ -33,6 +33,7 @@ export default async function MoviePage({ params: { id } }: MoviePageProps) {
         trendingWeekContent={similarMovies.slice(1, similarMovies.length)}
         type="movies"
         addMb={true}
+        swiperTitle={"Similar movies"}
       />
     </main>
   );
