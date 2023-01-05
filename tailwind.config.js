@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'autofit': 'repeat(auto-fit, minmax(300px, 3fr))'
+        'autofitLg': 'repeat(auto-fit, minmax(300px, 3fr))',
+        'autofitSm': 'repeat(auto-fit, minmax(120px, 2fr))',
       },
     },
   },

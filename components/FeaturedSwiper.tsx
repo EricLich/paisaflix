@@ -25,9 +25,11 @@ const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, m
 
   return (
     <div
-      className={`w-[${carousel.current?.scrollWidth}px] ${mtNegative && "-mt-[300px]"} relative z-20 overflow-hidden`}
+      className={`w-[${carousel.current?.scrollWidth}px] ${
+        mtNegative && "-mt-[230px] -lg:mt-[300px]"
+      } relative z-20 overflow-hidden`}
     >
-      <h2 className="text-white font-semibold text-3xl mb-8">{title}</h2>
+      <h2 className="text-white font-semibold text-2xl lg:text-3xl mb-8">{title}</h2>
       <motion.div
         /* @ts-ignore */
         ref={carousel}
@@ -37,7 +39,7 @@ const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, m
         whileTap={{ cursor: "grabbing" }}
       >
         {featuredItems.map((item, index: number) => (
-          <motion.div key={item.id} className=" min-w-[200px] relative rounded-md z-30 overflow-hidden">
+          <motion.div key={item.id} className="min-w-[120px] lg:min-w-[200px] relative rounded-md z-30 overflow-hidden">
             <Image
               priority
               src={`${API_POSTER_IMAGE_PATH}${item.poster_path}`}
@@ -55,7 +57,7 @@ const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, m
             >
               <Link
                 href={`/${type}/${item.id}`}
-                className="w-[90%] absolute bottom-3 text-lg text-white hover:text-yellow-300 duration-200 truncate text-ellipsis"
+                className="w-[90%] absolute bottom-3 text-md lg:text-lg text-white hover:text-yellow-300 duration-200 truncate text-ellipsis"
                 draggable={false}
                 title={(item as Movie).title ? (item as Movie).title : (item as TV).name}
               >

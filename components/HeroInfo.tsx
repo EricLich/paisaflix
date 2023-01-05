@@ -18,31 +18,36 @@ const HeroInfo: React.FC<HeroInfoProps> = ({ content, type, addMb }) => {
   const movieGenres: Genre[] = genres.filter((genre) => content.genre_ids.includes(genre.id));
 
   return (
-    <div className={`w-full h-full z-20 flex flex-col items-start mt-[200px] `}>
-      <h2 className="text-white text-5xl font-bold">
+    <div className={`w-full h-full z-20 flex flex-col items-start mt-[120px] lg:mt-[200px] `}>
+      <h1 className="text-white text-[30px] lg:text-5xl font-bold">
         {(content as Movie).title ? (content as Movie).title : (content as TV).name}
-      </h2>
+      </h1>
       <StarRating voteAverage={content.vote_average} />
-      <p className="w-[100%] max-w-[400px] text-white text-base leading-8 mb-8 line-clamp-6" title={content.overview}>
+      <p
+        className="max-h-[200px] h-[150px] w-[100%] max-w-[400px] text-white text-sm lg:text-base leading-6 lg:leading-8 mb-6 lg:mb-8 line-clamp-6"
+        title={content.overview}
+      >
         {content.overview}
       </p>
       <div className="flex flex-col items-start gap-3">
         <div className="flex gap-2">
-          <p className="text-white font-semibold">Genres:</p>
+          <p className="text-white text-sm lg:text-base font-semibold">Genres:</p>
           <div className="text-white ">
             {movieGenres.map((genre, index: number) => (
-              <span key={genre.id}>
+              <span key={genre.id} className="text-xs lg:text-base">
                 {genre.name}
                 {index < movieGenres.length - 1 && ", "}
               </span>
             ))}
           </div>
         </div>
-        <p className="text-white font-semibold">Raitings: {(content.vote_average / 2).toFixed(2)}</p>
+        <p className="text-white text-sm lg:text-base font-semibold">
+          Raitings: {(content.vote_average / 2).toFixed(2)}
+        </p>
         <Link
           href={`/${type}/${content.id}`}
-          className={`w-[330px] max-w-[384px] py-3 bg-[#FED530] hover:bg-yellow-500 transition-all duration-200 font-semibold text-center rounded-full text-xl mt-12 ${
-            addMb ? "!mb-[100px]" : ""
+          className={`w-[230px] lg:w-[330px] max-w-[230px] lg:max-w-[384px] py-2 lg:py-3 bg-[#FED530] hover:bg-yellow-500 transition-all duration-200 font-semibold text-center rounded-full text-base lg:text-xl mt-4 lg:mt-12 ${
+            addMb ? "!mb-0 !lg:mb-[100px]" : ""
           }`}
         >
           Watch now

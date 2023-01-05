@@ -27,7 +27,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ content, type }) => {
     }
   }, [loaded]);
   return (
-    <Link href={`/${type}/${content.id}`} className="overflow-hidden rounded-sm h-full w-full" key={content.id}>
+    <Link href={`/${type}/${content.id}`} className="overflow-hidden rounded-sm h-full w-full " key={content.id}>
       <article className="relative overflow-hidden">
         <motion.div
           initial={"hidden"}
@@ -46,7 +46,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ content, type }) => {
           />
         </motion.div>
         <div className="absolute bottom-0 w-full h-[200px] bg-gradient-to-b from-transparent to-black px-3 pb-9 flex">
-          <h3 className="text-white font-base text-2xl self-end">
+          <h3 className="text-white font-base text-md lg:text-2xl self-end ">
             {(content as Movie).title ? (content as Movie).title : (content as TV).name}
           </h3>
         </div>

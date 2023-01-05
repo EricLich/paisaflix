@@ -46,11 +46,11 @@ const Navbar = () => {
         showBg ? "bg-black opacity-90" : "bg-transparent"
       }`}
     >
-      <nav className="w-[85%] mx-auto flex justify-between items-center opacity-100">
+      <nav className="w-[90%] lg:w-[85%] mx-auto flex justify-between items-center opacity-100">
         <Link href={"/"} className="mr-[75px] text-4xl font-bold text-white">
           Theflix
         </Link>
-        <ul className="flex items-center gap-12 mr-auto">
+        <ul className="hidden lg:flex items-center gap-12 mr-auto">
           {menuItems.map((menuItem) => (
             <li key={menuItem.routeName}>
               <Link
@@ -63,10 +63,10 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-6 lg:gap-10">
           <Search className="text-white cursor-pointer" />
           <div className="w-[35px] h-[35px] rounded-full bg-white"></div>
-          <h3 className="text-white font-bold">Profile name</h3>
+          <h3 className="hidden lg:visible text-white font-bold">Profile name</h3>
         </div>
       </nav>
     </header>
