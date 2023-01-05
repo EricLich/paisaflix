@@ -42,7 +42,7 @@ const Footer = () => {
     <footer className="w-full mt-[200px] mb-14">
       <div className="w-[85%] mx-auto flex items-start gap-[20%]">
         <div className="flex flex-col gap-8">
-          <h2 className="text-white text-6xl font-semibold">TheFlix</h2>
+          <h2 className="text-white text-6xl font-semibold">Theflix</h2>
           <p className="text-white text-base font-semibold">Join the Newsletter</p>
           <form className="h-16 w-[280px] border border-gray-800 flex items-center justify-between rounded-lg gap-2 px-3">
             <input
