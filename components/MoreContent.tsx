@@ -48,10 +48,7 @@ const MoreContent: React.FC<MoreContentProps> = ({ apiUrl, title, type }) => {
         aria-label="load more content"
         role={"button"}
       >
-        {/* <div className="w-[90%] h-[90%] bg-black rounded-full flex justify-center items-center text-center  lg:text-5xl">
-          <span className="self-center -mt-1 -lg:mt-2">+</span>
-        </div> */}
-        <ExpandMoreIcon className="w-full h-full" />
+        <ExpandMoreIcon className="w-full h-full" fontSize="medium" />
       </motion.button>
     </section>
   );
