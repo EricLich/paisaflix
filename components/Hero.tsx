@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ trendingWeekContent, featuredHero, type, ad
   return (
     <section className="w-[85%] mx-auto flex flex-col">
       <HeroFeatured featuredContent={featuredHero} type={type} addMb={addMb} />
-      <FeaturedSwiper featuredItems={trendingWeekContent} title={swiperTitle} mtNegative={true} type="movies" />
+      <FeaturedSwiper featuredItems={trendingWeekContent} title={swiperTitle} mtNegative={true} type={type} />
     </section>
   );
 };

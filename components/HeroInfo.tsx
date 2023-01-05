@@ -39,7 +39,7 @@ const HeroInfo: React.FC<HeroInfoProps> = ({ content, type, addMb }) => {
         <p className="text-white font-semibold">Raitings: {(content.vote_average / 2).toFixed(2)}</p>
         <Link
           href={`/${type}/${content.id}`}
-          className={`w-[90%] max-w-[384px] py-3 bg-[#FED530] hover:bg-yellow-500 transition-all duration-200 font-semibold text-center rounded-full text-xl mt-12 ${
+          className={`w-[330px] max-w-[384px] py-3 bg-[#FED530] hover:bg-yellow-500 transition-all duration-200 font-semibold text-center rounded-full text-xl mt-12 ${
             addMb ? "!mb-[100px]" : ""
           }`}
         >
