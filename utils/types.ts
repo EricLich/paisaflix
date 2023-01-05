@@ -33,6 +33,7 @@ export type TV = {
   created_by: Array<Creator>;
   episode_run_time: any[];
   first_air_date: string;
+  genres: Array<Genre>;
   genre_ids: Array<number>;
   homepage: string;
   id: number;
