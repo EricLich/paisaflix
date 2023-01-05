@@ -12,7 +12,7 @@ type FeaturedSwiperProps = {
   featuredItems: Movie[] | TV[];
   title: string;
   mtNegative: boolean;
-  type: "movie" | "tv";
+  type: "movies" | "tv";
 };
 
 const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, mtNegative, type }) => {
@@ -49,12 +49,12 @@ const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, m
             />
 
             <div
-              className="w-full h-[90%] absolute bottom-0 bg-gradient-to-b from-transparent to-black text-white px-3"
+              className="w-full h-[80%] absolute bottom-0 bg-gradient-to-b from-transparent to-black text-white px-3"
               draggable={false}
             >
               <Link
                 href={`/${type}/${item.id}`}
-                className="w-[90%] absolute bottom-3 text-lg text-white hover:text-yellow-300 truncate text-ellipsis"
+                className="w-[90%] absolute bottom-3 text-lg text-white hover:text-yellow-300 duration-200 truncate text-ellipsis"
                 draggable={false}
                 title={(item as Movie).title ? (item as Movie).title : (item as TV).name}
               >

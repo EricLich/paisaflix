@@ -39,7 +39,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full mt-auto mb-14">
+    <footer className="w-full mt-[200px] mb-14">
       <div className="w-[85%] mx-auto flex items-start gap-[20%]">
         <div className="flex flex-col gap-8">
           <h2 className="text-white text-6xl font-semibold">TheFlix</h2>
@@ -48,7 +48,7 @@ const Footer = () => {
             <input
               type="text"
               placeholder="Insert your name here"
-              className="bg-transparent pr-4 text-[#AAAAB6] opacity-60 font-light h-full focus:outline-none"
+              className="bg-transparent pr-4 text-[#AAAAB6] opacity-90 font-light h-full focus:outline-none"
             />
             <button className="h-12 w-12 bg-yellow-300 rounded-md text-2xl hover:bg-yellow-500 duration-200">→</button>
           </form>

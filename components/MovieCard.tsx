@@ -3,12 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
 import { API_POSTER_IMAGE_PATH } from "../api/apiConstants";
 import type { Movie, TV } from "../utils/types";
 
 type ContentCardProps = {
   content: Movie | TV;
-  type: "movie" | "tv";
+  type: "movies" | "tv";
 };
 
 const ContentCard: React.FC<ContentCardProps> = ({ content, type }) => {

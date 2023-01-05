@@ -9,7 +9,7 @@ import ContentCard from "./MovieCard";
 type MoreContentProps = {
   apiUrl: string;
   title: string;
-  type: "movie" | "tv";
+  type: "movies" | "tv";
 };
 
 const MoreContent: React.FC<MoreContentProps> = ({ apiUrl, title, type }) => {

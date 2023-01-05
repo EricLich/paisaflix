@@ -3,6 +3,7 @@ export type Movie = {
   backdrop_path: string | null;
   belongs_to_collection: Collection;
   budget: number;
+  genres?: Array<Genre>;
   genre_ids: Array<number>;
   homepage: string;
   id: number;
@@ -32,7 +33,7 @@ export type TV = {
   created_by: Array<Creator>;
   episode_run_time: any[];
   first_air_date: string;
-  genres: Array<Genre>;
+  genre_ids: Array<number>;
   homepage: string;
   id: number;
   in_production: boolean;
@@ -57,7 +58,7 @@ export type TV = {
   status: string;
   tagline: string;
   type: string;
-  voted_average: number;
+  vote_average: number;
   voted_count: number;
 }
 

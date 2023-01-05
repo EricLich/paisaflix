@@ -14,11 +14,14 @@ export default async function Home() {
   const showsFetch = await fetch(API_TRENDING_TV_SHOWS_WEEK, { next: { revalidate: 30 } });
   const { results: trendingWeekMovies }: { results: Movie[] } = await movieFetch.json();
   const { results: trendingWeekShows }: { results: TV[] } = await showsFetch.json();
-
   return (
     <main className="-mt-[80px]">
-      <Hero trendingWeekMovies={trendingWeekMovies} />
-      <MoreContent apiUrl={API_TRENDING_MOVIES_WEEK_PAGE} title={"More movies"} type="movie" />
+      <Hero
+        featuredHero={trendingWeekMovies[0]}
+        trendingWeekContent={trendingWeekMovies.slice(1, trendingWeekMovies.length)}
+        type="movies"
+      />
+      <MoreContent apiUrl={API_TRENDING_MOVIES_WEEK_PAGE} title={"More movies"} type="movies" />
       <FeaturedShows featuredShows={trendingWeekShows} />
       <MoreContent apiUrl={API_TRENDING_TV_WEEK_PAGE} title={"More shows"} type="tv" />
     </main>
