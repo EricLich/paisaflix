@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
+import { Search } from "@mui/icons-material";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -63,7 +64,7 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="flex items-center gap-10">
-          <p className="text-white">search icon</p>
+          <Search className="text-white cursor-pointer" />
           <div className="w-[35px] h-[35px] rounded-full bg-white"></div>
           <h3 className="text-white font-bold">Profile name</h3>
         </div>
