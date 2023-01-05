@@ -39,6 +39,7 @@ const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, m
         {featuredItems.map((item, index: number) => (
           <motion.div key={item.id} className=" min-w-[200px] relative rounded-md z-30 overflow-hidden">
             <Image
+              priority
               src={`${API_POSTER_IMAGE_PATH}${item.poster_path}`}
               alt={`${(item as Movie).title ? (item as Movie).title : (item as TV).name} poster image`}
               width={200}

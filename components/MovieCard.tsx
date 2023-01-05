@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { memo } from "react";
 
 import { API_POSTER_IMAGE_PATH } from "../api/apiConstants";
 import type { Movie, TV } from "../utils/types";
@@ -34,4 +34,4 @@ const ContentCard: React.FC<ContentCardProps> = ({ content, type }) => {
   );
 };
 
-export default ContentCard;
+export default memo(ContentCard);
