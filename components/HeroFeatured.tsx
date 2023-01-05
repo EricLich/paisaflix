@@ -26,9 +26,9 @@ const HeroFeatured: React.FC<HeroFeaturedProps> = ({ featuredContent, type, addM
           alt={`${
             (featuredContent as Movie).title ? (featuredContent as Movie).title : (featuredContent as TV).name
           } poster image`}
-          width={1000}
-          height={1000}
-          quality={80}
+          width={800}
+          height={800}
+          quality={75}
           className="w-full h-full object-cover opa"
         />
       </div>

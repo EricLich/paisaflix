@@ -44,7 +44,7 @@ const FeaturedSwiper: React.FC<FeaturedSwiperProps> = ({ featuredItems, title, m
               alt={`${(item as Movie).title ? (item as Movie).title : (item as TV).name} poster image`}
               width={200}
               height={200}
-              quality={80}
+              quality={70}
               className="object-cover"
               draggable={false}
             />
