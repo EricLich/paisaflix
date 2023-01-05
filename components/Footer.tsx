@@ -8,7 +8,7 @@ const Footer = () => {
   const footerLinks: Array<Array<{ routeName: string; route: string }>> = [
     [
       { routeName: "Movies", route: "/movies" },
-      { routeName: "TV Shows", route: "/tv-shows" },
+      { routeName: "TV Shows", route: "/tv" },
       { routeName: "Videos", route: "/videos" },
     ],
     [
