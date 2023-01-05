@@ -30,7 +30,7 @@ export default async function TVPage({ params: { id } }: TVPageProps) {
       <Hero
         featuredHero={fetchedTV}
         trendingWeekContent={similarTV.slice(1, similarTV.length)}
-        type="movies"
+        type="tv"
         addMb={true}
         swiperTitle="Similar TV shows"
       />
