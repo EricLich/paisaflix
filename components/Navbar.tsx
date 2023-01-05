@@ -66,7 +66,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6 lg:gap-10">
           <Search className="text-white cursor-pointer" />
           <div className="w-[35px] h-[35px] rounded-full bg-white"></div>
-          <h3 className="hidden lg:visible text-white font-bold">Profile name</h3>
+          <h3 className="hidden lg:block text-white font-bold">Profile name</h3>
         </div>
       </nav>
     </header>

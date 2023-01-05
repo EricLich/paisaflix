@@ -43,8 +43,10 @@ const MoreContent: React.FC<MoreContentProps> = ({ apiUrl, title, type }) => {
       </div>
       <motion.button
         whileTap={{ scale: 0.9 }}
-        className="self-center mt-6 text-yellow-500 w-12 lg:w-20 h-12 lg:h-20"
+        className="self-center mt-6 text-yellow-500 w-16 lg:w-24 h-16 lg:h-24"
         onClick={() => setPageToLoad((prev) => prev + 1)}
+        aria-label="load more content"
+        role={"button"}
       >
         {/* <div className="w-[90%] h-[90%] bg-black rounded-full flex justify-center items-center text-center  lg:text-5xl">
           <span className="self-center -mt-1 -lg:mt-2">+</span>
