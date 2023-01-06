@@ -42,7 +42,7 @@ const HeroInfo: React.FC<HeroInfoProps> = ({ content, type, addMb }) => {
           </div>
         </div>
         <p className="text-white text-sm lg:text-base font-semibold">
-          Raitings: {(content.vote_average / 2).toFixed(2)}
+          Ratings: {(content.vote_average / 2).toFixed(2)}
         </p>
         <Link
           href={`/${type}/${content.id}`}
